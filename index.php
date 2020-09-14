@@ -1,68 +1,44 @@
-<?php  
+<?php 
+// Funções
+require_once("controllers/SessionController.php");
 
+$acao = $_GET["acao"] ?? "signin";
+
+// Logica
+if($acao == 'signin') {
+  
+  
   session_start();
 
   if (isset($_SESSION['logado']) && $_SESSION['logado'] == true) {
-    header("Location: logado/");
+    $acao = 'logado';
+  }
+  
+  
+  if (isset($_POST['nome']) && isset($_POST['senha'])) {
+
+    $nome = $_POST['nome'];
+    $senha = $_POST['senha'];
+
+    $autenticado = create($nome, $senha);
+
+    if ($autenticado) {
+      $_SESSION['logado'] = true;
+      $_SESSION['usuario'] = $_POST['usuario'];
+
+      $acao = 'logado';
+    } else {
+      echo '<span style="color: red;">Usuário ou senha incorretos</span>';
+    }
   }
 
-?>
+} else if ($acao == 'logout') {
+  echo 'oi';
+  session_start(); //to ensure you are using same session
+  session_destroy(); //destroy the session
+  $acao = 'signin';
+  header("location:/trabalho10/index.php");
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="box">
-      <h1>Login</h1>
-
-      <form method="POST">
-        <div class="login-inputs">
-          <span>Nome do usuário</span>
-          <input type="text" name="usuario" id="usuario">
-        </div>
-        <div class="login-inputs">
-          <span>Senha</span>
-          <input type="password" name="senha" id="senha">
-        </div>      
-          <input type="submit" value="Entrar" class="entrar-input">
-      </form>
-
-      <?php
-      
-        require_once 'controllers/SessionController.php';
-
-        if (isset($_POST['usuario'])) {
-
-          $nome = $_POST['usuario'];         
-          $senha = $_POST['senha'];
-
-          $autenticado = create($nome, $senha);     
-          
-          if ($autenticado) {
-            $_SESSION['logado'] = true;
-            $_SESSION['usuario'] = $_POST['usuario'];
-      
-            header("Location: logado/index.php");
-          } else {
-            echo '<span style="color: red;">Usuário ou senha incorretos</span>';
-          }
-          
-        }
-      ?>
-
-      <br>
-      <a href="signup.php">Cadastrar</a>
-      
-
-
-</div>
-</div>
-</body>
-</html>
-
+// UI
+require_once("views.php");

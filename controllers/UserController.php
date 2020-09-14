@@ -2,8 +2,7 @@
 
 require 'models/User.php';
 
-function create ($nome, $senha) {
-
+function create($nome, $senha) {
   $user = new User();
 
   $user->nome = $nome;
