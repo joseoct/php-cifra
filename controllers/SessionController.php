@@ -12,6 +12,8 @@ class SessionController {
     $current = $user->findOne();
 
     if ($senha === $current->senha) {
+      session_start();
+      $_SESSION['user_id'] = $current->user_id;
       return true;
     }
 

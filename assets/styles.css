@@ -26,7 +26,7 @@ body {
 .login-inputs {
   margin-top: 24px;
   display: flex;
-  width: 200px;
+  width: 400px;
   flex-direction: column;
 }
 
