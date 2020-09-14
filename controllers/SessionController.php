@@ -2,19 +2,27 @@
 
 require 'models/User.php';
 
-function create ($nome, $senha) {
-  $user = new User();
+class SessionController {
 
-  $user->nome = $nome;
+  public function create ($nome, $senha) {
+    $user = new User();
 
-  $current = $user->findOne();
+    $user->nome = $nome;
 
-  if ($senha === $current->senha) {
-    return true;
+    $current = $user->findOne();
+
+    if ($senha === $current->senha) {
+      return true;
+    }
+
+    return false;
   }
 
-  return false;
+  public function __get($propriedade) {
+    return $this->$propriedade;
+  }
+
+  public function __set($propriedade, $valor) {
+    return $this->$propriedade = $valor;
+  }
 }
-
-
-?>

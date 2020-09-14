@@ -3,11 +3,11 @@
 <form method="POST">
   <div class="login-inputs">
     <span>Nome</span>
-    <input type="text" name="name" id="name">
+    <input type="text" name="nome" id="name">
   </div>
   <div class="login-inputs">
     <span>Senha</span>
-    <input type="password" name="pass" id="pass">
+    <input type="password" name="senha" id="pass">
   </div>     
   
     <input type="submit" value="Cadastrar" class="entrar-input">

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Atividades</title>
+    <title>Cifras dos idiotas</title>
     <link rel="stylesheet" href="assets/style.css" />
 </head>
 

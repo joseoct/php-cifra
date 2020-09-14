@@ -2,16 +2,22 @@
 
 require 'models/User.php';
 
-function create($nome, $senha) {
-  $user = new User();
+class UserController {
 
-  $user->nome = $nome;
-  $user->senha = $senha;
+  public function create ($nome, $senha) {
+    $user = new User();
 
-  $user->save();
+    $user->nome = $nome;
+    $user->senha = $senha;
 
-  // header("location:/trabalho1/index.php");
+    $user->save();
+  }
+
+  public function __get($propriedade) {
+    return $this->$propriedade;
+  }
+
+  public function __set($propriedade, $valor) {
+    return $this->$propriedade = $valor;
+  }
 }
-
-
-?>

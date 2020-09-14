@@ -8,4 +8,5 @@
     <input type="password" name="senha" id="senha">
   </div>      
     <input type="submit" value="Entrar" class="entrar-input">
-</form>
+  </form>
+  <a href="index.php?acao=signup">Cadastrar</a>

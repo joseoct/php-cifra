@@ -1,12 +1,12 @@
 <?php 
 // Funções
-require_once("controllers/SessionController.php");
 
 $acao = $_GET["acao"] ?? "signin";
 
 // Logica
 if($acao == 'signin') {
   
+  require_once("controllers/SessionController.php");
   
   session_start();
 
@@ -20,7 +20,9 @@ if($acao == 'signin') {
     $nome = $_POST['nome'];
     $senha = $_POST['senha'];
 
-    $autenticado = create($nome, $senha);
+    $sessionController = new SessionController();
+
+    $autenticado = $sessionController->create($nome, $senha); 
 
     if ($autenticado) {
       $_SESSION['logado'] = true;
@@ -33,12 +35,31 @@ if($acao == 'signin') {
   }
 
 } else if ($acao == 'logout') {
+  
   echo 'oi';
   session_start(); //to ensure you are using same session
   session_destroy(); //destroy the session
   $acao = 'signin';
-  header("location:/trabalho10/index.php");
-}
+  header("location:/trabalho1/index.php");
 
+} else if ($acao == 'signup') {
+
+  if (isset($_POST['nome']) && isset($_POST['senha'])) {
+
+    require_once("controllers/UserController.php");
+
+    $nome = $_POST['nome'];
+    $senha = $_POST['senha'];
+
+    $userController = new UserController();
+
+    $userController->create($nome, $senha);
+    
+    $acao = 'signin';
+    header("location:/trabalho1/index.php");
+
+  }
+
+}
 // UI
 require_once("views.php");
