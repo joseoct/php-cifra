@@ -10,7 +10,7 @@ if($acao == 'signin') {
   session_start();
 
   if (isset($_SESSION['logado']) && $_SESSION['logado'] == true) {
-    header('location:/trabalho1/index.php?acao=logado');
+    header('location:/trabalho1/index.php?acao=listar-cifras');
   }
   
   
@@ -26,7 +26,7 @@ if($acao == 'signin') {
     if ($autenticado) {
       $_SESSION['logado'] = true;
 
-      header('location:/trabalho1/index.php?acao=logado');
+      header('location:/trabalho1/index.php?acao=listar-cifras');
     } else {
       echo '<span style="color: red;">Usuário ou senha incorretos</span>';
     }
@@ -54,23 +54,42 @@ if($acao == 'signin') {
     
     $acao = 'signin';
     header("location:/trabalho1/index.php");
-    
   }
 
 } else if ($acao == 'cadastrar-cifra') {    
   if (isset($_POST['autor'])) {
-
+    
     require_once("controllers/CifraController.php");
-  
+    
     $autor = $_POST['autor'];
     $musica = $_POST['musica'];
     $conteudo = $_POST['conteudo'];
+    $estilo = $_POST['estilo'];
     
     $cifraController = new CifraController();
+    
+    $cifraController->create($musica, $autor, $estilo, $conteudo);
 
-    $cifraController->create($musica, $autor, $conteudo);
+    header("location:/trabalho1/index.php?acao=listar-cifras");
   }
 
+} else if ($acao == 'listar-cifras') {    
+  
+  require_once("controllers/CifraController.php");
+  
+  $cifraController = new CifraController();
+  
+  $cifras = $cifraController->index();
+  
+} else if ($acao == 'mostrar-cifra') {    
+  
+  require_once("controllers/CifraController.php");
+  
+  $id = $_GET['id'];
+
+  $cifraController = new CifraController();
+  
+  $cifra = $cifraController->show($id);
 }
 // UI
 require_once("views.php");
