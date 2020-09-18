@@ -20,7 +20,7 @@ class Cifra {
     $query->bindParam(':estilo', $this->estilo);
     $query->bindParam(':conteudo', $this->conteudo);
     $query->execute();  
-    
+
     $cifra_id = $this->bd->lastInsertId();
     session_start();
     $user_id = $_SESSION['user_id'];

@@ -26,7 +26,7 @@ class CifraController {
 
     return $cifra->findById($id);
   }
-
+  
   public function __get($propriedade) {
     return $this->$propriedade;
   }
