@@ -10,7 +10,7 @@ if($acao == 'signin') {
   session_start();
 
   if (isset($_SESSION['logado']) && $_SESSION['logado'] == true) {
-    header('location:/trabalho1/index.php?acao=listar-cifras');
+    header('location:/php-cifra/index.php?acao=listar-cifras');
   }
   
   
@@ -26,7 +26,7 @@ if($acao == 'signin') {
     if ($autenticado) {
       $_SESSION['logado'] = true;
 
-      header('location:/trabalho1/index.php?acao=listar-cifras');
+      header('location:/php-cifra/index.php?acao=listar-cifras');
     } else {
       echo '<span style="color: red;">Usuário ou senha incorretos</span>';
     }
@@ -37,7 +37,7 @@ if($acao == 'signin') {
   session_start(); //to ensure you are using same session
   session_destroy(); //destroy the session
   $acao = 'signin';
-  header("location:/trabalho1/index.php");
+  header("location:/php-cifra/index.php");
 
 } else if ($acao == 'signup') {
   
@@ -53,7 +53,7 @@ if($acao == 'signin') {
     $userController->create($nome, $senha);
     
     $acao = 'signin';
-    header("location:/trabalho1/index.php");
+    header("location:/php-cifra/index.php");
   }
 
 } else if ($acao == 'cadastrar-cifra') {    
@@ -70,7 +70,7 @@ if($acao == 'signin') {
     
     $cifraController->create($musica, $autor, $estilo, $conteudo);
 
-    header("location:/trabalho1/index.php?acao=listar-cifras");
+    header("location:/php-cifra/index.php?acao=listar-cifras");
   }
 
 } else if ($acao == 'listar-cifras') {    

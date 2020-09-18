@@ -7,8 +7,8 @@ class Conexao {
     try {
       if(!isset(self::$instancia))
 
-        self::$instancia = new PDO("pgsql:host=localhost;port=5432;dbname=trabalho1;user=postgres;password=docker");
-        
+        self::$instancia = new PDO("pgsql:host=localhost;port=5432;dbname=php-cifra;user=postgres;password=docker");
+      
       return self::$instancia;
 
     } catch(Exception $e) {
