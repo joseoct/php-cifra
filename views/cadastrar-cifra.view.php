@@ -30,7 +30,6 @@
                             <button class="btn btn-form mt-2 md-4" type="submit" value="Entrar">Enviar Cifra <i class="fas fa-plus ml-2"></i></button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
