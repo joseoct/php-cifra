@@ -7,19 +7,19 @@
                     <form method="POST">
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Nome da música:</label>
-                            <input type="text" name="musica" class="form-control" id="exampleFormControlInput1">
+                            <input type="text" name="musica" class="form-control" id="exampleFormControlInput1" autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Nome do Artista:</label>
-                            <input type="text" name="autor" class="form-control" id="exampleFormControlInput1">
+                            <input type="text" name="autor" class="form-control" id="exampleFormControlInput1" autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Estilo Musical:</label>
                             <select name="estilo" class="form-control" id="exampleFormControlSelect1">
                                 <option value="" selected disabled hidden>Escolha um estilo</option>
-                                <option value="sertanejo">Sertanejo</option>
-                                <option value="rock">Rock</option>
-                                <option value="pop">Pop</option>
+                                <option value="Sertanejo">Sertanejo</option>
+                                <option value="Rock">Rock</option>
+                                <option value="Pop">Pop</option>
                             </select>
                         </div>
                         <div class="form-group">
