@@ -151,3 +151,12 @@ body {
     background: #634328;
     overflow: hidden;
 }
+.page-header {
+  font-size: 14px;
+  padding:  20px;
+  background-image: -webkit-linear-gradient( -4deg, #48352f 28%, #bd6638 81%, #bd6638 100% ) !important;
+  overflow: hidden;
+}
+.header-logo{
+  width: 200px;
+}

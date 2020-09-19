@@ -2,7 +2,7 @@
 // Funções
 
 $acao = $_GET["acao"] ?? "signin";
-
+$_POST['error'] = false;
 // Logica
 if($acao == 'signin') {  
   require_once("controllers/SessionController.php");
@@ -28,7 +28,8 @@ if($acao == 'signin') {
 
       header('location:/php-cifra/index.php?acao=listar-cifras');
     } else {
-      echo '<span style="color: red;">Usuário ou senha incorretos</span>';
+      //echo '<span style="color: red;">Usuário ou senha incorretos</span>';
+      $_POST['error'] = true;
     }
   }
   
