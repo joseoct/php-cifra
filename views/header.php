@@ -11,7 +11,7 @@
 <header class="page-header">
     <div class="header-container">
         <div class="row">
-            <div class="col-md-3 d-flex justify-content-center align-items-center">
+            <div class="col-md-2 d-flex justify-content-center align-items-center">
                 <img class="header-logo" src="images/logo.png" alt="Cifrando Logo">
             </div>
         </div>

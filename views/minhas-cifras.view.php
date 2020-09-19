@@ -7,7 +7,7 @@
                     <?php if (sizeof($cifras) == 0) : ?>
                         <section>
                             <div>
-                            <h2 class="text-center mb-5 title-form">Ainda não existem cifras cadastradas.<br> Cadastre sua cifra!<i class="fas fa-arrow-down ml-3"></i></h2>
+                            <h2 class="text-center mb-5 title-form">Você não tem cifras cadastradas.</h2>
                             </div>
                         </section>
                     <?php else : ?>
