@@ -3,7 +3,7 @@
         <div class="cifra-list-container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-center mb-4 title-form">Lista de Cifras<i class="fas fa-guitar ml-3"></i></h2>
+                    <h2 class="text-center mb-4 title-form">Minhas Cifras<i class="fas fa-guitar ml-3"></i></h2>
                     <?php if (sizeof($cifras) == 0) : ?>
                         <section>
                             <div>
@@ -28,23 +28,16 @@
                                         <td><?= $cifra->estilo; ?></td>
                                         <td class="btn-ver-cifra">
                                             <a class="btn btn-form " href="index.php?acao=mostrar-cifra&id=<?= $cifra->cifra_id; ?>">Ver Cifra <i class="fas fa-play ml-2"></i></a>
+                                            <a class="btn btn-form " href="index.php?acao=deletar-cifra&id=<?= $cifra->cifra_id; ?>"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                     <?php endif; ?>
+                    <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <a class="btn btn-form " href="index.php?acao=listar-cifras">Voltar <i class="fas fa-arrow-left ml-2"></i></a>
                 </div>
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <form method="POST" action="index.php?acao=logout">
-                        <button class="btn btn-form mt-2 md-4" type="submit" value="Logout" class="entrar-input">Logout<i class="fas fa-sign-out-alt ml-2"></i></button>
-                    </form>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <a class="btn btn-form " href="index.php?acao=minhas-cifras">Ver minha cifras <i class="fas ml-2"></i></a>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <a class="btn btn-form " href="index.php?acao=cadastrar-cifra">Cadastrar Cifra <i class="fas fa-plus ml-2"></i></a>
                 </div>
             </div>
         </div>

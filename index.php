@@ -3,6 +3,7 @@
 
 $acao = $_GET["acao"] ?? "signin";
 $_POST['error'] = false;
+
 // Logica
 if($acao == 'signin') {  
   require_once("controllers/SessionController.php");
@@ -25,10 +26,10 @@ if($acao == 'signin') {
 
     if ($autenticado) {
       $_SESSION['logado'] = true;
+      $login = true;
 
       header('location:/php-cifra/index.php?acao=listar-cifras');
     } else {
-      //echo '<span style="color: red;">Usuário ou senha incorretos</span>';
       $_POST['error'] = true;
     }
   }
@@ -91,6 +92,25 @@ if($acao == 'signin') {
   $cifraController = new CifraController();
   
   $cifra = $cifraController->show($id);
+} else if ($acao == 'minhas-cifras') {    
+  
+  require_once("controllers/CifraController.php");
+  
+  $cifraController = new CifraController();
+  
+  $cifras = $cifraController->index2();
+} else if ($acao == 'deletar-cifra') {    
+  
+  require_once("controllers/CifraController.php");
+
+  $id = $_GET['id'];
+  
+  $cifraController = new CifraController();
+
+  $cifraController->delete($id);
+
+  header("location:/php-cifra/index.php?acao=minhas-cifras");
 }
+
 // UI
 require_once("views.php");
