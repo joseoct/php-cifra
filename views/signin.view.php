@@ -7,7 +7,7 @@
                     <form method="POST">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome de Usuário:</label>
-                            <input type="text" class="form-control" name="nome" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" name="nome" aria-describedby="emailHelp" autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Senha:</label>
