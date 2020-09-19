@@ -47,6 +47,24 @@ class Cifra {
     return $query->fetch(PDO::FETCH_OBJ);
   }
 
+  public function findByUserId() {
+    $query = $this->bd->prepare("SELECT cifras.cifra_id, cifras.conteudo, cifras.nome_autor, cifras.nome_musica, cifras.estilo FROM users_cifras, cifras WHERE users_cifras.user_id = :user_id and cifras.cifra_id = users_cifras.cifra_id");
+    session_start();
+    $query->bindParam(':user_id', $_SESSION['user_id']);
+    $query->execute();
+    
+    return $query->fetchAll(PDO::FETCH_OBJ);
+  }
+
+  public function remove($id) {
+    $query = $this->bd->prepare("DELETE FROM users_cifras WHERE cifra_id = :id");
+    $query->bindParam(':id', $id);
+    $query->execute();  
+    $query = $this->bd->prepare("DELETE FROM cifras WHERE cifra_id = :id");
+    $query->bindParam(':id', $id);
+    $query->execute();   
+  }
+
   public function __get($propriedade) {
     return $this->$propriedade;
   }
