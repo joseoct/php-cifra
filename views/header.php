@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Cifras dos idiotas</title>
+    <title>Cifrando</title>
     <link rel="stylesheet" href="assets/styles.css" />
     <link rel="stylesheet" href="assets/bootstrap.css" />
     <link rel="stylesheet" href="assets/all.css" />
