@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>Cifras dos idiotas</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <title>Cifrando</title>
     <link rel="stylesheet" href="assets/styles.css" />
     <link rel="stylesheet" href="assets/bootstrap.css" />
     <link rel="stylesheet" href="assets/all.css" />

@@ -1,13 +1,13 @@
 <div class="bg-image">
-    <div class="cifra-list">
+    <div class="my-cifras">
         <div class="cifra-list-container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-center mb-4 title-form">Lista de Cifras<i class="fas fa-guitar ml-3"></i></h2>
+                    <h2 class="text-center mb-4 title-form">Minhas Cifras<i class="fas fa-guitar ml-3"></i></h2>
                     <?php if (sizeof($cifras) == 0) : ?>
                         <section>
                             <div>
-                            <h2 class="text-center mb-5 title-form">Ainda não existem cifras cadastradas.<br> Cadastre sua cifra!<i class="fas fa-arrow-down ml-3"></i></h2>
+                            <h2 class="text-center mb-5 title-form">Você não tem cifras cadastradas.</h2>
                             </div>
                         </section>
                     <?php else : ?>
@@ -26,29 +26,18 @@
                                         <td><?= $cifra->nome_musica; ?></td>
                                         <td><?= $cifra->nome_autor; ?></td>
                                         <td><?= $cifra->estilo; ?></td>
-                                        <td class="btn-ver-cifra">
+                                        <td class="btn-cifra-usuario">
                                             <a class="btn btn-form " href="index.php?acao=mostrar-cifra&id=<?= $cifra->cifra_id; ?>">Ver Cifra <i class="fas fa-play ml-2"></i></a>
+                                            <a class="btn btn-form " href="index.php?acao=deletar-cifra&id=<?= $cifra->cifra_id; ?>">Excluir<i class="fas fa-trash-alt ml-2"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                     <?php endif; ?>
+                    <div class="col-md-12 d-flex justify-content-center align-items-center">
+                    <a class="btn btn-form " href="index.php?acao=listar-cifras">Voltar <i class="fas fa-arrow-left ml-2"></i></a>
                 </div>
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <form method="POST" action="index.php?acao=logout">
-                        <button class="btn btn-form mt-2 md-4" type="submit" value="Logout" class="entrar-input">Logout<i class="fas fa-sign-out-alt ml-2"></i></button>
-                    </form>
-                </div>
-<<<<<<< Updated upstream
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-=======
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <a class="btn btn-form " href="index.php?acao=minhas-cifras">Ver minha cifras <i class="fas fa-bars ml-2"></i></a>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
->>>>>>> Stashed changes
-                    <a class="btn btn-form " href="index.php?acao=cadastrar-cifra">Cadastrar Cifra <i class="fas fa-plus ml-2"></i></a>
                 </div>
             </div>
         </div>
