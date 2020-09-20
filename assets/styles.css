@@ -64,7 +64,7 @@ body {
   width: 200px;
 }
 .form-login{
-  padding: 100px;
+  padding: 130px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -109,7 +109,7 @@ body {
   color: white;
 }
 .cifra-list{
-  padding: 100px;
+  padding: 140px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -144,12 +144,25 @@ body {
   border: none;
   padding: 20px;
 }
+.my-cifras{
+  padding: 200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-cifra-usuario{
+  display: flex;
+  justify-content: space-around;
+}
 .page-footer {
     color: #ededed;
     font-size: 14px;
     padding: 50px 0 50px 0;
     background: #634328;
-    overflow: hidden;
+    overflow: hidden; 
+    width: 100%;
 }
 .page-header {
   font-size: 14px;
