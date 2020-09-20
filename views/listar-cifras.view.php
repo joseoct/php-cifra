@@ -35,19 +35,15 @@
                         </table>
                     <?php endif; ?>
                 </div>
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
                     <form method="POST" action="index.php?acao=logout">
                         <button class="btn btn-form mt-2 md-4" type="submit" value="Logout" class="entrar-input">Logout<i class="fas fa-sign-out-alt ml-2"></i></button>
                     </form>
                 </div>
-<<<<<<< Updated upstream
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-=======
                 <div class="col-md-4 d-flex justify-content-center align-items-center">
                     <a class="btn btn-form " href="index.php?acao=minhas-cifras">Ver minha cifras <i class="fas fa-bars ml-2"></i></a>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center align-items-center">
->>>>>>> Stashed changes
                     <a class="btn btn-form " href="index.php?acao=cadastrar-cifra">Cadastrar Cifra <i class="fas fa-plus ml-2"></i></a>
                 </div>
             </div>
